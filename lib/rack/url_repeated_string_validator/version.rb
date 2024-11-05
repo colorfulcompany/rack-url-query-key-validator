@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Rack
-  class UrlQueryKeyValidator
+  class UrlRepeatedStringValidator
     VERSION = "0.1.0"
   end
 end

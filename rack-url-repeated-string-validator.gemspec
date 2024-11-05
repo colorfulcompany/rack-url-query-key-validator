@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require_relative "lib/rack/url_query_key_validator/version"
+require_relative "lib/rack/url_repeated_string_validator/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "rack-url-query-key-validator"
-  spec.version = Rack::UrlQueryKeyValidator::VERSION
+  spec.name = "rack-url-repeated-string-validator"
+  spec.version = Rack::UrlRepeatedStringValidator::VERSION
   spec.authors = ["Colorful Company"]
   spec.email = ["webmaster@colorfulcompany.co.jp"]
 
-  spec.summary = "A Rack middleware for validate URL Query Keys"
-  spec.homepage = "https://github.com/colorfulcompany/rack-url-query-key-validator"
+  spec.summary = "A Rack middleware for validate repeated string in URL"
+  spec.homepage = "https://github.com/colorfulcompany/rack-url-repeated-string-validator"
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"

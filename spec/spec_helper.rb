@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rack/url_query_key_validator"
+require "rack/url_repeated_string_validator"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -1,11 +1,11 @@
-# Rack::UrlQueryKeyValidator
-A Rack middleware for exclude strings multiple times in the URL query parameter key, it will be bad requests.
+# Rack::UrlRepeatedStringValidator
+A Rack middleware for exclude strings repeated in the URL, it will be bad requests.
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "rack-url-query-key-validator"
+gem "rack-url-repeated-string-validator"
 ```
 
 And then execute:
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rack-url-query-key-validator
+    $ gem install rack-url-repeated-string-validator
 
 
 ## Usage
@@ -25,18 +25,18 @@ Or install it yourself as:
 # invalid_keys default: ["amp;"]
 # max_allowed default: 3
 # logger default: nil
-config.middleware.use Rack::UrlQueryKeyValidator, invalid_keys: ["foo"], max_allowed: 3, logger: Rails.logger
+config.middleware.use Rack::UrlRepeatedStringValidator, invalid_keys: ["foo"], max_repeated: 3, logger: Rails.logger
 ```
 
 for example...
-* OK => `?foofoofoo=bar`
-* NG => `?foofoofoofoo=bar`
+* OK => `http://localhost?foofoofoo=bar`
+* NG => `http://localhost?foofoofoofoo=bar`
 
 ### Rack App
 
 ```ruby
 Rack::Builder.new do
-  use Rack::UrlQueryKeyValidator, invalid_keys: ["foo"], max_allowed: 3, logger: logger
+  use Rack::UrlRepeatedStringValidator, invalid_keys: ["foo"], max_repeated: 3, logger: logger
   run Rack::Application
 end
 ```
